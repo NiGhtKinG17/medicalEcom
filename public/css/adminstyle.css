@@ -1,0 +1,57 @@
+nav {
+  background-color: #ACFFAD;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  color: green;
+}
+
+table {
+  border: solid 1px;
+}
+
+.sorting tr:not(.home) {
+  cursor: pointer;
+}
+
+.ui-state-hightlight {
+  border: 1px dashed #ccc;
+}
+
+#imgPreview {
+  margin: 1.25rem
+}
+
+#noimage {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.allignmiddle {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.mn {
+  font-family: 'Yeseva One', cursive;
+  font-size: 2rem;
+}
+
+.srf {
+  font-family: 'Kaisei HarunoUmi', serif;
+}
+
+.cred {
+  width: 6.25rem;
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+.logo {
+  height: 4rem;
+  margin-right: 1rem
+}

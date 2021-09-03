@@ -1,0 +1,60 @@
+<%- include('../_layouts/adminheader') %>
+
+<h2 class="page-title srf">Edit product</h2>
+<a href="/admin/products" class="btn btn-success">Back to all products</a>
+<br><br>
+
+<form method="post" action="/admin/products/edit-product/<%= id %>" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Title">
+    </div>
+
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea name="desc" class="form-control" cols="30" rows="10" placeholder="Description"><%= desc %></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="">Category</label>
+        <select name="category" class="form-control">
+            <% categories.forEach(function(cat){ %>
+                <option value="<%= cat.slug %>"
+                <% if (cat.slug == category) { %>
+                selected="selected"
+                <% } %>
+                ><%= cat.title %></option>
+            <% }); %>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Price</label>
+        <input type="text" class="form-control" name="price" value="<%= price %>" placeholder="Price">
+    </div>
+
+    <div class="form-group">
+        <label for="">Current Image</label>
+        <p>
+            <% if (image == "") { %>
+            <img id="noimage" src="/images/noimage.png" alt="">
+            <% } else {%>
+            <img id="noimage" src="/product_images/<%= image %>" alt="">
+            <% } %>
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label for="">Upload Image</label>
+        <input type="file" class="form-control" name="image" id="img">
+        <img src="#" id="imgPreview" alt="">
+    </div>
+
+    <input type="hidden" name="pimage" value="<%= image %>">
+    <div class="col-12">
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+</form>
+
+<%- include('../_layouts/adminfooter') %>

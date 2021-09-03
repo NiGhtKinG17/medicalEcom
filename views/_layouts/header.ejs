@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"><!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/images/fav.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>User</title>
+</head>
+
+<body>
+  <div class="ajaxbg">
+    <div class="ajaxinner">
+      <h3>You are now being redirected to Paypal</h3>
+      <img src="/images/ajax-loader.gif" alt="">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md navbar-light ">
+    <div class="container-fluid">
+      <img class="logo" src="/images/ecomLogo.png" alt="">
+      <a class="navbar-brand mn">Metro Medical</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <% pages.forEach(page => { %>
+          <% if(page.slug === "home"){ %>
+              <li><a class="nav-link" href="/"><%= page.title %></a></a></li>
+          <% } else { %>
+              <li><a class="nav-link" href="/<%= page.slug %>"><%= page.title %></a></a></li>
+          <% } %>
+          <% }); %>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li>
+            <% if(user){ %>
+              <a class="btn btn-success" href="/cart/checkout">My Cart🛒(
+                <% if(typeof cart!== "undefined") { %>
+                  <%= cart.length %>
+                <% } else { %>
+                  0
+                <% } %>
+              )
+              </a>
+            <% } %>
+
+          </li>
+          <% if(user) { %>
+            <li><a href="/users/logout" class="btn btn-success cred">Logout</a> </li>
+          <% } else { %>
+            <li> <a href="/users/register" class="btn btn-success cred">Register</a> </li>
+            <li> <a href="/users/login" class="btn btn-success cred">Login</a> </li>
+          <% } %>
+          <% if(user && user.admin===1) { %>
+            <li><a href="/admin/pages" class="btn btn-success ">Admin Area</a> </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <%- messages('messages', locals) %>
+    <% if(errors) { %>
+      <% errors.forEach(error => {%>
+        <div class="alert alert-danger">
+          <%= error.msg %>
+        </div>
+      <%})%>
+    <%}%>
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <% if(user) { %>
+        <h3 class="srf">Hello, <%= user.username %></h3><br>
+      <% } %>
+      <h3 class="srf">Categories</h3>
+      <ul class="list-group">
+        <li class="list-group-item"> <a href="/products">All Products</a> </li>
+      <%  categories.forEach((c) => { %>
+          <li class="list-group-item"> <a href="/products/<%= c.slug %>"><%= c.title %></a> </li>
+      <%  }) %>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-1"></div>
+    <div class="col-xs-12 col-md-8">

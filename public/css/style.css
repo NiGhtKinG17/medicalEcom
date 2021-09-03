@@ -1,0 +1,91 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  color: green;
+}
+
+.pimage {
+  width: 9.375rem;
+}
+
+.pa {
+  display: inline-block;
+  height: 10rem;
+}
+
+.products .p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.spi {
+  width: 100%;
+}
+
+.cpi {
+  width: 6.25rem;
+}
+
+.allignmiddle {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.pp {
+  position: absolute;
+  left: -187.5rem;
+}
+
+.ajaxbg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgbs(255,255,255, .8);
+  z-index: 2;
+  display: none;
+}
+
+.ajaxinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.cred {
+  width: 6.25rem;
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+.alert-error {
+  color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+nav {
+  background-color: #ACFFAD;
+}
+
+.mn {
+  font-family: 'Yeseva One', cursive;
+  font-size: 2rem;
+}
+
+.srf {
+  font-family: 'Kaisei HarunoUmi', serif;
+}
+
+.logo {
+  height: 4rem;
+  margin-right: 1rem
+}
+
+.card {
+  height: 21rem;
+  margin-top: 0.75rem;
+}
