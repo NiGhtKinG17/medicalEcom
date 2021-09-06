@@ -44,8 +44,8 @@
   <form class="pp" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
   <input type="hidden" name="cmd" value="_cart">
   <input type="hidden" name="upload" value="1">
-  <input type="hidden" name="business" value="1hritik2shelar45@gmail.com">
-  <% let num = 0; %>
+  <input type="hidden" name="business" value="sb-9ecmr7535406@business.example.com">
+  <% var num = 0; %>
   <% cart.forEach(p => { %>
     <% num++ %>
     <input type="hidden" name="item_name_<%= num %>" value="<%= p.title %>">
