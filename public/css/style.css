@@ -3,16 +3,21 @@ body {
 }
 
 a {
-  color: green;
+  color: #008080;
 }
 
 .pimage {
+  padding-top: 1.5rem;
   width: 9.375rem;
 }
 
 .pa {
   display: inline-block;
   height: 10rem;
+}
+
+.products {
+  margin-top: 2rem;
 }
 
 .products .p {
@@ -59,6 +64,13 @@ a {
   width: 6.25rem;
   margin-right: 0.625rem;
   margin-left: 0.625rem;
+  background-color: #ffffff;
+  color: black;
+}
+
+.cred:hover {
+  background-color: #22577A;
+  color: white;
 }
 
 .alert-error {
@@ -67,8 +79,16 @@ a {
     border-color: #f5c2c7;
 }
 
-nav {
-  background-color: #ACFFAD;
+.navbartop {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,128,128,1) 35%, rgba(0,212,255,1) 100%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  margin-bottom: 1rem;
+}
+
+.ftr {
+  background-color: #008080;
+  color: white;
 }
 
 .mn {
@@ -86,6 +106,74 @@ nav {
 }
 
 .card {
-  height: 21rem;
+  height: 22rem;
   margin-top: 0.75rem;
+  transition: transform .3s;
+}
+
+.card:hover {
+  transform: translateY(-1rem);
+  transition: transform .3s;
+}
+
+.credmain {
+  background-color: #008080;
+  color: white;
+  width: 6.25rem;
+}
+
+.credmain:hover {
+  background-color: #22577A;
+  color: white;
+}
+
+.cardshad {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sidebar  {
+  background-color: #008080;
+  color: white;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar a:hover {
+  color: #22577A;
+}
+
+.vdatcli {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  line-height: 2;
+}
+
+.btn-atc {
+  background: #008080;
+  width: 12.2rem;
+  color: white;
+  height: 3rem;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.btn-atc:hover {
+  background: #22577A;
+  color: white;
+  vertical-align: middle;
+}
+
+.card-body {
+  margin-top: 1rem;
+}
+
+.itp {
+ color: #FFB319;
+}
+
+.list-group {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

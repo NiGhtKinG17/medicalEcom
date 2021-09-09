@@ -204,12 +204,12 @@ router.post('/edit-product/:id', (req,res) => {
 
             if(imageFile !== "") {
               if(pimage !== "") {
-                fs.remove('public/product_images/'+id+'/'+pimage, (err) => {
+                fs.remove('public/product_images/'+pimage, (err) => {
                   if(err) console.log(err);
                 })
               }
               var productImage = req.files.image;
-              var path = 'public/product_images/'+ id + '/' + imageFile;
+              var path = 'public/product_images/' + imageFile;
 
               productImage.mv(path, err => {
                 return console.log(err);

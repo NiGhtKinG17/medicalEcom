@@ -1,5 +1,7 @@
 nav {
-  background-color: #ACFFAD;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,128,128,1) 35%, rgba(0,212,255,1) 100%);
+  margin-bottom: 1.5rem;
 }
 
 body {
@@ -7,7 +9,7 @@ body {
 }
 
 a {
-  color: green;
+  color: #008080;
 }
 
 table {
@@ -49,9 +51,31 @@ table {
   width: 6.25rem;
   margin-right: 0.625rem;
   margin-left: 0.625rem;
+  background-color: #ffffff;
+  color: black;
+}
+
+.cred:hover {
+  background-color: #22577A;
+  color: white;
 }
 
 .logo {
   height: 4rem;
   margin-right: 1rem
+}
+
+.ftr {
+  background-color: #008080;
+  color: white;
+}
+
+.adminbuttons {
+  background-color: #008080;
+  color: white;
+}
+
+.adminbuttons:hover {
+  background-color: #22577A;
+  color: white;
 }

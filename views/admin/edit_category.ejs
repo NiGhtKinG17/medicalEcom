@@ -1,7 +1,7 @@
 <%- include('../_layouts/adminheader') %>
 
 <h2 class="page-title srf">Edit a Category</h2>
-<a href="/admin/categories" class="btn btn-success">Back to all Categories</a>
+<a href="/admin/categories" class="btn adminbuttons">Back to all Categories</a>
 <br><br>
 
 <form class="row g-3" action="/admin/categories/edit-category/<%=id%>" method="post">
@@ -10,7 +10,7 @@
     <input class="form-control" type="text" name="title" value="<%= title %>" placeholder="Title">
   </div>
   <div class="col-12">
-    <button class="btn btn-success" type="submit">Submit</button>
+    <button class="btn adminbuttons" type="submit">Submit</button>
   </div>
 </form>
 

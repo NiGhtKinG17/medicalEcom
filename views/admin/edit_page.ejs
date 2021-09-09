@@ -1,7 +1,7 @@
 <%- include('../_layouts/adminheader') %>
 
 <h2 class="page-title srf">Edit a page</h2>
-<a href="/admin/pages" class="btn btn-success">Back to all pages</a>
+<a href="/admin/pages" class="btn adminbuttons">Back to all pages</a>
 <br><br>
 
 <form class="row g-3" action="/admin/pages/edit_page/<%=id%>" method="post">
@@ -18,7 +18,7 @@
     <textarea class="form-control" name="content" id="ta" rows="10" cols="30" placeholder="Content"><%= content %></textarea>
   </div>
   <div class="col-12">
-    <button class="btn btn-success" type="submit">Submit</button>
+    <button class="btn adminbuttons" type="submit">Submit</button>
   </div>
 </form>
 
