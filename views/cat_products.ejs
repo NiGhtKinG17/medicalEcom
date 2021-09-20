@@ -1,14 +1,17 @@
 <%- include('_layouts/header') %>
 
-<div class="row row-cols-1 row-cols-md-5 mb-3 text-center products">
+<div class="row row-cols-2 row-cols-md-5 mb-3 text-center products">
   <% products.forEach((p) => { %>
     <div class="col">
       <div class="card mb-4 rounded-3 cardshad">
         <a class="pa" href="/products/<%= p.category %>/<%=p.slug%>">
-          <img class="pimage" src="/product_images/<%= p.image %>" alt="">
+          <img class="card-img-top pimage" src="/product_images/<%= p.image %>" alt="">
         </a>
         <div class="card-body">
-          <h5 class="card-title"><%= p.title %></h5>
+          <div class="cttl">
+            <h5 class="card-title"><%= p.title %></h5>
+          </div>
+
           <% if(!loggedIn){ %>
             <div class="vdatcli">
               <h5 class="itp"><b>Rs.<%= parseFloat(p.price).toFixed(2) %></b></h5>
