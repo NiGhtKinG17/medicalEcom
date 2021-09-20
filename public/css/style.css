@@ -107,7 +107,6 @@ a {
 
 .card {
   height: 22rem;
-  width: 14.2rem;
   margin-top: 0.75rem;
   transition: transform .3s;
 }
@@ -146,19 +145,17 @@ a {
 }
 
 .vdatcli {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
   line-height: 2;
 }
 
 .btn-atc {
   background: #008080;
-  width: 12.2rem;
   color: white;
   height: 3rem;
   font-size: 1.1rem;
   vertical-align: middle;
+  align-self: center;
+  margin-top: 0.5rem;
 }
 
 .btn-atc:hover {
