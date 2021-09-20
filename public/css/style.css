@@ -106,7 +106,6 @@ a {
 }
 
 .card {
-  height: 22rem;
   margin-top: 0.75rem;
   transition: transform .3s;
 }
