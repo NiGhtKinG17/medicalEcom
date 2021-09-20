@@ -8,7 +8,10 @@
           <img class="card-img-top pimage" src="/product_images/<%= p.image %>" alt="">
         </a>
         <div class="card-body">
-          <h5 class="card-title"><%= p.title %></h5>
+          <div class="cttl">
+            <h5 class="card-title"><%= p.title %></h5>
+          </div>
+
 
           <% if(!loggedIn){ %>
             <div class="vdatcli">

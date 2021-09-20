@@ -115,6 +115,10 @@ a {
   transition: transform .3s;
 }
 
+.cttl {
+  height: 5rem;
+}
+
 .credmain {
   background-color: #008080;
   color: white;
