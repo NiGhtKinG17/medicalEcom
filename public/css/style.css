@@ -110,11 +110,6 @@ a {
   transition: transform .3s;
 }
 
-.card:hover {
-  transform: translateY(-1rem);
-  transition: transform .3s;
-}
-
 .cttl {
   height: 5rem;
 }
@@ -177,4 +172,8 @@ a {
 
 .list-group {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+footer .nav-link{
+  color:white;
 }

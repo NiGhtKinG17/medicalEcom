@@ -3,6 +3,7 @@ const router = express.Router();
 const Page = require('../models/page');
 
 router.get('/', (req,res) => {
+
   Page.findOne({slug: "home"}, (err,page) => {
     if(err) console.log(err);
     else {

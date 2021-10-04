@@ -109,6 +109,7 @@ app.get('*', (req,res,next) => {
 })
 
 const pages = require('./routes/pages.js');
+const adminOrders = require('./routes/adminorders.js');
 const products = require('./routes/products.js');
 const cart = require('./routes/cart.js');
 const users = require('./routes/users.js');
@@ -120,6 +121,7 @@ const adminProducts = require('./routes/adminproducts.js');
 app.use('/admin/pages',adminPages);
 app.use('/admin/categories', adminCategories);
 app.use('/admin/products', adminProducts);
+app.use('/admin/orders', adminOrders);
 app.use('/products', products);
 app.use('/cart', cart);
 app.use('/users',users)

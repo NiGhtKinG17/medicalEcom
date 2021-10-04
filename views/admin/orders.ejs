@@ -1,0 +1,59 @@
+<%- include('../_layouts/adminheader') %>
+
+<h2 class="page-title srf">Orders</h2>
+<br><br>
+
+<table class="table table-striped sorting">
+  <thead>
+    <tr class="home">
+      <th>User</th>
+      <th>Email</th>
+      <th>Order</th>
+      <th>Total</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(order => { %>
+
+      <tr id="id_<%= order._id%>">
+        <td><%= order.user %></td>
+        <td><%= order.email %></td>
+          <% let total = 0 %>
+          <td><ol>
+
+                <% order.order.forEach(ord => { %>
+                <li><%= ord.title %>, Quantity: <%= ord.qty %>, Rs.<%= ord.price %></li>
+                <%  total = total+parseFloat(ord.price) %>
+                  <% }) %>
+
+          </ol></td>
+        <td><%= parseFloat(total).toFixed(2) %></td>
+
+        <td><a class="confirmDeletion" href="/admin/orders/delete-order/<%= order._id %>">Delete</a></td>
+
+
+      </tr>
+    <%})%>
+  </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script>
+
+  $('tbody').sortable({
+
+    items: "tr:not('.home')",
+    placeholder: "ui-state-hightlight",
+    update: function() {
+      var ids = $('tbody').sortable("serialize");
+      var url = "/admin/pages/reorder-page";
+      $.post(url,ids);
+    }
+
+  });
+
+</script>
+
+<%- include('../_layouts/adminfooter') %>

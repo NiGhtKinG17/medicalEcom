@@ -41,10 +41,9 @@
     </tr>
   </table>
 
-  <form class="pp" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+  <form class="pp" action="/paynow" method="post">
   <input type="hidden" name="cmd" value="_cart">
   <input type="hidden" name="upload" value="1">
-  <input type="hidden" name="business" value="sb-9ecmr7535406@business.example.com">
   <% var num = 0; %>
   <% cart.forEach(p => { %>
     <% num++ %>
@@ -56,6 +55,7 @@
   <input type="hidden" name="amount" value="<%= total %>">
   <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
   </form>
+
 
 <% } else { %>
   <h3 class="text-center srf">Your Cart is empty</h3>
