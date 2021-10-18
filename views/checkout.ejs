@@ -36,9 +36,22 @@
         <a class="btn btn-danger clearcart" href="/cart/clear">Clear Cart</a>
       </td>
       <td colspan="5" align="right">
-        <a class="btn btn-primary buynow" href="#">Buy Now</a>
+        <form action="payment" method="POST">
+        <input type="hidden" name="amount" value="<%= total%>">
+        <script
+            src="//checkout.stripe.com/v2/checkout.js"
+            class="stripe-button"
+            data-key="<%= key %>"
+            data-amount="<%= total %>00"
+            data-currency="inr"
+            data-name="Hritik Shelar"
+            data-description="Buy React.js Complete Course"
+            data-locale="auto" >
+            </script>
+        </form>
       </td>
     </tr>
+
   </table>
 
   <form class="pp" action="/paynow" method="post">
@@ -53,6 +66,7 @@
   <% }) %>
   <input type="hidden" name="currency_code" value="INR">
   <input type="hidden" name="amount" value="<%= total %>">
+
   <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
   </form>
 
