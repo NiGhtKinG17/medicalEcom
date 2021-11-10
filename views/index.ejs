@@ -1,6 +1,226 @@
-<%- include('_layouts/header') %>
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/images/fav.ico">
 
-<h1 class="srf"><%= title %></h1>
-<p style="text-allign: justify;"><%- content %></p>
+        <!-- bootstrap.min css -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <!-- Icon Font Css -->
+        <link rel="stylesheet" href="/plugins/icofont/icofont.min.css">
+        <!-- Slick Slider  CSS -->
+        <link rel="stylesheet" href="/plugins/slick-carousel/slick/slick.css">
+        <link rel="stylesheet" href="/plugins/slick-carousel/slick/slick-theme.css">
+        <link rel="stylesheet" href="/css/homestyle.css">
+        <title>User</title>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-expand-md navbar-dark navbartop ">
+            <div class="container-fluid">
+              <img class="logo" src="/images/ecomLogo.png" alt="">
+              <a class="navbar-brand mn">Metro Medical</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <% pages.forEach(page => { %>
+                  <% if(page.slug === "home"){ %>
+                      <li><a class="nav-link" href="/"><%= page.title %></a></a></li>
+                  <% } else { %>
+                      <li><a class="nav-link" href="/<%= page.slug %>"><%= page.title %></a></a></li>
+                  <% } %>
+                  <% }); %>
+                  <li><a class="nav-link" href="/products">Products</a></a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                  <li>
+                    <% if(user){ %>
+                      <a class="btn cred mc" style="width:9rem;" href="/cart/checkout">🛒 My Cart (
+                        <% if(typeof cart!== "undefined") { %>
+                          <%= cart.length %>
+                        <% } else { %>
+                          0
+                        <% } %>
+                      )
+                      </a>
+                    <% } %>
+        
+                  </li>
+                  <% if(user) { %>
+                    <li><a href="/users/logout" class="btn cred">Logout</a> </li>
+                  <% } else { %>
+                    <li> <a href="/users/register" class="btn cred reg">Register</a> </li>
+                    <li> <a href="/users/login" class="btn cred">Login</a> </li>
+                  <% } %>
+                  <% if(user && user.admin===1) { %>
+                    <li><a href="/admin/categories" style="width:7rem;" class="btn cred">Admin Area</a> </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </nav>
 
-<%- include('_layouts/footer') %>
+        <section class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-xl-7">
+                        <div class="block">
+                            <div class="divider mb-3"></div>
+                            <span class="text-uppercase text-sm letter-spacing ">Metro Medical</span>
+                            <h1 class="mb-3 mt-3">Your most trusted health partner</h1>
+                            
+                            <p class="mb-0 pr-5">Place where people can take medicine with there eyes closed!</p>
+                            <p class="mb-4 pr-5">We believe in honesty and all the medicine supplied are 100% legit</p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="feature-block d-lg-flex">
+                            <div class="feature-item mb-5 mb-lg-0">
+                                <div class="feature-icon mb-4">
+                                    <i class="icofont-surgeon-alt"></i>
+                                </div>
+                                <span>24 Hours Service</span>
+                                <h4 class="mb-3">Online Purchase</h4>
+                                <p class="mb-4">Get all kind of medicine in the world like 24/7</p>
+                                <a href="/products" class="btn button btn-main btn-round-full">Make purchase</a>
+                            </div>
+                        
+                            <div class="feature-item mb-5 mb-lg-0">
+                                <div class="feature-icon mb-4">
+                                    <i class="icofont-ui-clock"></i>
+                                </div>
+                                <span>Timing schedule</span>
+                                <h4 class="mb-3">Working Hours</h4>
+                                <ul class="w-hours list-unstyled">
+                                    <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 22:00</span></li>
+                                    <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 22:00</span></li>
+                                    <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 22:00</span></li>
+                                </ul>
+                            </div>
+                        
+                            <div class="feature-item mb-5 mb-lg-0">
+                                <div class="feature-icon mb-4">
+                                    <i class="icofont-support"></i>
+                                </div>
+                                <span>Contact Us</span>
+                                <h4 class="mb-3">93253-36372</h4>
+                                <p>We are available 24/7 in your service!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta-section ">
+            <div class="container">
+                <div class="cta position-relative">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-doctor"></i>
+                                <span class="h3">58</span>k
+                                <p>Happy People</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-flag"></i>
+                                <span class="h3">700</span>k
+                                <p>Medicine Delivered</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-badge"></i>
+                                <span class="h3">20</span>+
+                                <p>Expert Pharmaceutical Logist</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-globe"></i>
+                                <span class="h3">10</span>
+                                <p>National Branch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section clients">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="section-title text-center">
+                            <h2>Partners who support us</h2>
+                            <div class="divider mx-auto my-4"></div>
+                            <p>Organization who supported us, standing behind us like a Mt.Everest itself! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="row clients-logo">
+                    <div class="col-lg-2">
+                        <div class="client-thumb">
+                            <img src="/images/about/1.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="client-thumb">
+                            <img src="/images/about/2.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="client-thumb">
+                            <img src="/images/about/3.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="client-thumb">
+                            <img src="/images/about/4.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="client-thumb">
+                            <img src="/images/about/5.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="client-thumb">
+                            <img src="/images/about/6.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+        <footer class="py-3 ftr footer" style="margin-bottom: 0;">
+            <ul class="nav justify-content-center pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link ftr-link px-2">Home</a></li>
+              <li class="nav-item"><a href="/products" class="nav-link ftr-link px-2">Products</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ftr-link px-2">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ftr-link px-2">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ftr-link px-2 ">Health Tips</a></li>
+            </ul>
+            <p class="text-center">© 2021 Metro Medical, Inc</p>
+          </footer>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </body>
+</html>

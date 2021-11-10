@@ -36,19 +36,7 @@
         <a class="btn btn-danger clearcart" href="/cart/clear">Clear Cart</a>
       </td>
       <td colspan="5" align="right">
-        <form action="payment" method="POST">
-        <input type="hidden" name="amount" value="<%= total%>">
-        <script
-            src="//checkout.stripe.com/v2/checkout.js"
-            class="stripe-button"
-            data-key="<%= key %>"
-            data-amount="<%= total %>00"
-            data-currency="inr"
-            data-name="Hritik Shelar"
-            data-description="Metromedical Panvel"
-            data-locale="auto" >
-            </script>
-        </form>
+        <a href="https://pacific-scrubland-84197.herokuapp.com/" class="btn btn-primary">Pay Now</a>
       </td>
     </tr>
 

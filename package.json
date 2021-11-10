@@ -27,7 +27,7 @@
     "nodemon": "^2.0.13",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "resize-img": "^2.0.0",
-    "stripe": "^8.183.0"
+    "razorpay": "^2.0.7",
+    "resize-img": "^2.0.0"
   }
 }

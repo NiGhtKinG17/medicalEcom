@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/fav.ico">
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="/plugins/icofont/icofont.min.css">
+    <!-- Slick Slider  CSS -->
+    <link rel="stylesheet" href="/plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="/plugins/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <title>User</title>
+</head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark navbartop " style="margin-bottom: 0;">
+            <div class="container-fluid">
+              <img class="logo" src="/images/ecomLogo.png" alt="">
+              <a class="navbar-brand mn">Metro Medical</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <% pages.forEach(page => { %>
+                  <% if(page.slug === "home"){ %>
+                      <li><a class="nav-link" href="/"><%= page.title %></a></a></li>
+                  <% } else { %>
+                      <li><a class="nav-link" href="/<%= page.slug %>"><%= page.title %></a></a></li>
+                  <% } %>
+                  <% }); %>
+                  <li><a class="nav-link" href="/products">Products</a></a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                  <li>
+                    <% if(user){ %>
+                      <a class="btn cred mc" style="width:9rem;" href="/cart/checkout">🛒 My Cart (
+                        <% if(typeof cart!== "undefined") { %>
+                          <%= cart.length %>
+                        <% } else { %>
+                          0
+                        <% } %>
+                      )
+                      </a>
+                    <% } %>
+        
+                  </li>
+                  <% if(user) { %>
+                    <li><a href="/users/logout" class="btn cred">Logout</a> </li>
+                  <% } else { %>
+                    <li> <a href="/users/register" class="btn cred reg">Register</a> </li>
+                    <li> <a href="/users/login" class="btn cred">Login</a> </li>
+                  <% } %>
+                  <% if(user && user.admin===1) { %>
+                    <li><a href="/admin/categories" style="width:7rem;" class="btn cred">Admin Area</a> </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <section class="page-title " style="background-color:#fef9ef;">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="block text-center">
+                    <h1 class="text-capitalize mb-5 text-lg" style="color: black;">About Us</h1>
+          
+                    <!-- <ul class="list-inline breadcumb-nav">
+                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                      <li class="list-inline-item"><span class="text-white">/</span></li>
+                      <li class="list-inline-item"><a href="#" class="text-white-50">About Us</a></li>
+                    </ul> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section about-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2 class="title-color">Personal care for your healthy living</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <p style="color: gray;">Taking care of people's health since 1980s by providing 100% legit medicine. All kinds of medicine are available in our medical. Contacts enough that any foreign medicine can be present to you in a blink of an eye! Even express delivery are available to all parts of the country.</p>
+                        <img src="/images/about/sign.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section awards">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <h2 class="title-color" style="font-weight: bold;">Our Support </h2>
+                        <div class="divider mt-4 mb-5 mb-lg-0"></div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="award-img">
+                                    <img src="images/about/3.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="award-img">
+                                    <img src="images/about/4.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="award-img">
+                                    <img src="images/about/1.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="award-img">
+                                    <img src="images/about/2.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="award-img">
+                                    <img src="images/about/5.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="award-img">
+                                    <img src="images/about/6.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section team">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-title text-center">
+                            <h2 class="mb-4">Meet Our Specialist</h2>
+                            <div class="divider mx-auto my-4"></div>
+                            <p>Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="team-block mb-5 mb-lg-0">
+                            <img src="./images/about/Shinde.jpg" alt="" class="img-fluid image-shake w-100">
+        
+                            <div class="content">
+                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Omkar Shinde</a></h4>
+                                <p>Co-Owner</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="team-block mb-5 mb-lg-0">
+                            <img src="./images/about/Mihir.webp" alt="" class="img-fluid image-shake w-100">
+        
+                            <div class="content">
+                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Mihir Thotam</a></h4>
+                                <p>Co-Owner</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="team-block mb-5 mb-lg-0">
+                            <img src="./images/about/Shelar.jpg" alt="" class="img-fluid image-shake w-100">
+        
+                            <div class="content">
+                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Hritik Shelar</a></h4>
+                                <p>Co-Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="team-block">
+                            <img src="./images/about/Karle.jpg" alt="" class="img-fluid image-shake w-100">
+        
+                            <div class="content">
+                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Omkar Karle</a></h4>
+                                <p>Delivery Boy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="py-3 ftr footer" style="margin-bottom: 0;">
+            <ul class="nav justify-content-center pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link ftr-link px-2">Home</a></li>
+              <li class="nav-item"><a href="/products" class="nav-link ftr-link px-2">Products</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ftr-link px-2">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ftr-link px-2">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ftr-link px-2 ">Health Tips</a></li>
+            </ul>
+            <p class="text-center">© 2021 Metro Medical, Inc</p>
+          </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </body>
+</html>

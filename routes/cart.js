@@ -4,7 +4,7 @@ const Product = require('../models/product');
 const Order = require('../models/order');
 const parseUrl = express.urlencoded({extended:true});
 const parseJson = express.json({extended:true})
-const stripe = require('stripe')("sk_test_51JlSJVSDpQSnIWsEPg9moY8Frxsc0xW1ccfPOwqa8cQDRcMTwMHmYlUs72uIhUR0h3NQZyjqznh70TOyvTWfzsnN00VCGd0F8D");
+
 
 
 router.get('/add/:product', (req,res) => {
@@ -92,7 +92,7 @@ router.get('/clear', (req,res) => {
 
 router.get('/payment', (req,res) => {
 
-  res.sendStatus(200);
+  res.render('payment');
 
   let order = new Order({
     user: res.locals.user.username,
@@ -102,37 +102,13 @@ router.get('/payment', (req,res) => {
   order.save(err => {
     if(err) console.log(err);
   })
-  delete req.session.cart;
+  
+  // delete req.session.cart;
 })
 
-router.post('/payment', (req,res) => {
-  stripe.customers.create({
-    email: req.body.stripeEmail,
-    source: req.body.stripeToken,
-    name:'Hritik Shelar',
-    address: {
-      line1: 'Metro Medical Panvel',
-      postal_code: '410106',
-      city:'New Mumbai',
-      state:'Maharashtra',
-      country:'India'
-    }
-  })
-  .then((customer) => {
-    return stripe.charges.create({
-      amount: req.body.amount,
-      description: 'Metromedical Panvel',
-      currency: 'INR',
-      customer: customer.id
-    })
-  })
-  .then((charge) => {
-    res.send("Success");
-  })
-  .catch(err => {
-    res.send(err);
-  })
-})
+
+
+
 
 
 module.exports = router;

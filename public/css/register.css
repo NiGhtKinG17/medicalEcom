@@ -1,0 +1,193 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    padding-bottom: 0;
+  }
+  
+  a {
+    color: black;
+  }
+  
+  .pimage {
+    padding-top: 1.5rem;
+    width: 9.375rem;
+  }
+  
+  .pa {
+    display: inline-block;
+    height: 10rem;
+  }
+  
+  .products {
+    margin-top: 2rem;
+  }
+  
+  .products .p {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .spi {
+    width: 100%;
+  }
+  
+  .cpi {
+    width: 6.25rem;
+  }
+  
+  .allignmiddle {
+    vertical-align: middle !important;
+    text-align: center;
+  }
+  
+  .pp {
+    position: absolute;
+    left: -187.5rem;
+  }
+  
+  .ajaxbg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgbs(255,255,255, .8);
+    z-index: 2;
+    display: none;
+  }
+  
+  .ajaxinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .cred {
+    width: 6.25rem;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
+    background-color: #ffffff;
+    color: black;
+  }
+  
+  .cred:hover {
+    background-color: #22577A;
+    color: white;
+  }
+  
+  .alert-error {
+    color: #842029;
+      background-color: #f8d7da;
+      border-color: #f5c2c7;
+  }
+  
+  .navbartop {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background-color: #0d0d0d;
+    margin-bottom: 1rem;
+  }
+  
+  .ftr {
+    background-color: black;
+    color: white;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .mn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+  }
+  
+  .srf {
+    font-family: 'Kaisei HarunoUmi', serif;
+  }
+  
+  .logo {
+    height: 4rem;
+    margin-right: 1rem
+  }
+  
+  .card {
+    margin-top: 0.75rem;
+    transition: transform .3s;
+  }
+  
+  .cttl {
+    height: 5rem;
+  }
+  
+  .credmain {
+    background-color: black;
+    color: white;
+    width: 6.25rem;
+  }
+  
+  .credmain:hover {
+    background-color: #22577A;
+    color: white;
+  }
+  
+  .cardshad {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .sidebar  {
+    background-color: #008080;
+    color: white;
+  }
+  
+  .sidebar a {
+    color: white;
+  }
+  
+  .sidebar a:hover {
+    color: #22577A;
+  }
+  
+  .vdatcli {
+    line-height: 2;
+  }
+  
+  .btn-atc {
+    background: #008080;
+    color: white;
+    height: 3rem;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    align-self: center;
+    margin-top: 0.5rem;
+  }
+  
+  .btn-atc:hover {
+    background: #22577A;
+    color: white;
+    vertical-align: middle;
+  }
+  
+  .card-body {
+    margin-top: 1rem;
+  }
+  
+  .itp {
+   color: #FFB319;
+  }
+  
+  .list-group {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  footer .nav-link{
+    color:white;
+  }
+
+  .register-button{
+      width: 30rem;
+  }
+
+  .category-list{
+    margin-top: 1.5rem;
+  }
+
+  .register-text{
+    font-family: 'Roboto', sans-serif;
+  }

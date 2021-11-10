@@ -1,11 +1,11 @@
-<%- include('_layouts/header') %>
+<!-- 
 
-<h1 class="srf"><%= title %></h1>
-<form class="row g-3" action="/users/login" method="post">
+<h1 class="srf"></h1>
+<form class="row g-3 text-center" action="/users/login" method="post">
 
   <div class="form-group">
     <label class="form-label">Username</label>
-    <input type="text" name="username" class="form-control" placeholder="Username" value="">
+    <input type="text" name="username" class="form-control login" placeholder="Username" value="">
   </div>
   <div class="form-group">
     <label class="form-label">Password</label>
@@ -16,5 +16,31 @@
     <button class="btn credmain" type="submit">Login</button>
   </div>
 </form>
+-->
 
-<%- include('_layouts/footer') %>
+
+<%- include('_layouts/header') %>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/images/ecomLogo.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form  action="/users/login" method="post">
+      <input type="text"  name="username" id="login" class="fadeIn second" name="login" placeholder="Login">
+      <input type="text" name="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+      <button type="submit"  class="fadeIn fourth btn btn-dark btn-block login-submit-button">Submit</button>
+    </form>
+
+    
+
+  </div>
+</div>
+
+
+<%- include('_layouts/footer') %> 

@@ -8,6 +8,7 @@ const expressValidator = require('express-validator');
 const fileUpload = require('express-fileupload');
 const passport = require('passport');
 
+
 mongoose.connect(config.database,{
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -17,6 +18,9 @@ mongoose.connect(config.database,{
 mongoose.set("useCreateIndex", true)
 
 const app = express();
+
+
+
 
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
@@ -126,6 +130,8 @@ app.use('/products', products);
 app.use('/cart', cart);
 app.use('/users',users)
 app.use('/', pages);
+
+
 
 let port = process.env.PORT;
 if(port == null || port == "") {
